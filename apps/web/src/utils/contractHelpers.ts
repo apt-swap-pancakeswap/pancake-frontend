@@ -27,6 +27,7 @@ import {
   getCakeFlexibleSideVaultAddress,
   getPredictionsV1Address,
   getBCakeFarmBoosterAddress,
+  getBCakeFarmBoosterV3Address,
   getBCakeFarmBoosterProxyFactoryAddress,
   getNonBscVaultAddress,
   getCrossFarmingSenderAddress,
@@ -72,6 +73,7 @@ import iCakeAbi from 'config/abi/iCake.json'
 import ifoV3Abi from 'config/abi/ifoV3.json'
 import cakePredictionsAbi from 'config/abi/cakePredictions.json'
 import bCakeFarmBoosterAbi from 'config/abi/bCakeFarmBooster.json'
+import bCakeFarmBoosterV3Abi from 'config/abi/bCakeFarmBoosterV3.json'
 import bCakeFarmBoosterProxyFactoryAbi from 'config/abi/bCakeFarmBoosterProxyFactory.json'
 import bCakeProxyAbi from 'config/abi/bCakeProxy.json'
 import nonBscVault from 'config/abi/nonBscVault.json'
@@ -120,6 +122,7 @@ import type {
   PotteryDrawAbi,
   PredictionsV1,
   BCakeFarmBooster,
+  BCakeFarmBoosterV3,
   BCakeFarmBoosterProxyFactory,
   BCakeProxy,
   NonBscVault,
@@ -292,6 +295,14 @@ export const getIfoCreditAddressContract = (signer?: Signer | Provider) => {
 
 export const getBCakeFarmBoosterContract = (signer?: Signer | Provider) => {
   return getContract({ abi: bCakeFarmBoosterAbi, address: getBCakeFarmBoosterAddress(), signer }) as BCakeFarmBooster
+}
+
+export const getBCakeFarmBoosterV3Contract = (signer?: Signer | Provider) => {
+  return getContract({
+    abi: bCakeFarmBoosterV3Abi,
+    address: getBCakeFarmBoosterV3Address(),
+    signer,
+  }) as BCakeFarmBoosterV3
 }
 
 export const getBCakeFarmBoosterProxyFactoryContract = (signer?: Signer | Provider) => {
