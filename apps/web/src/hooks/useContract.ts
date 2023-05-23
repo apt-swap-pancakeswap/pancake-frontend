@@ -1,4 +1,5 @@
 import { getPoolContractBySousId } from '@pancakeswap/pools'
+import QuoterV2Abi from 'config/abi/QuoterV2.json'
 import {
   Cake,
   CakeFlexibleSideVaultV2,
@@ -6,24 +7,24 @@ import {
   Erc20,
   Erc20Bytes32,
   Erc721collection,
+  IPancakePair,
   Multicall,
   Weth,
   Zap,
-  IPancakePair,
 } from 'config/abi/types'
-import QuoterV2Abi from 'config/abi/QuoterV2.json'
+import { useActiveChainId } from 'hooks/useActiveChainId'
 
-import zapAbi from 'config/abi/zap.json'
 import NFTPositionManagerABI from 'config/abi/nftPositionManager.json'
+import zapAbi from 'config/abi/zap.json'
 import addresses from 'config/constants/contracts'
 import { useProviderOrSigner } from 'hooks/useProviderOrSigner'
 import { useMemo } from 'react'
 import { getMulticallAddress, getPredictionsV1Address, getZapAddress } from 'utils/addressHelpers'
 import {
   getAnniversaryAchievementContract,
-  getBCakeFarmBoosterV3Contract,
   getBCakeFarmBoosterContract,
   getBCakeFarmBoosterProxyFactoryContract,
+  getBCakeFarmBoosterV3Contract,
   getBCakeProxyContract,
   getBep20Contract,
   getBunnyFactoryContract,
@@ -41,6 +42,7 @@ import {
   getIfoV2Contract,
   getIfoV3Contract,
   getLotteryV2Contract,
+  getMasterChefV3Contract,
   getMasterchefContract,
   getMasterchefV1Contract,
   getNftMarketContract,
@@ -52,35 +54,33 @@ import {
   getPredictionsContract,
   getPredictionsV1Contract,
   getProfileContract,
+  getSidContract,
+  getStableSwapNativeHelperContract,
   getTradingCompetitionContractEaster,
   getTradingCompetitionContractFanToken,
-  getTradingCompetitionContractMobox,
   getTradingCompetitionContractMoD,
-  getStableSwapNativeHelperContract,
-  getSidContract,
+  getTradingCompetitionContractMobox,
   getTradingRewardContract,
-  getV3MigratorContract,
-  getMasterChefV3Contract,
-  getV3AirdropContract,
   getUnsContract,
+  getV3AirdropContract,
+  getV3MigratorContract,
 } from 'utils/contractHelpers'
 import { useSigner } from 'wagmi'
 
 // Imports below migrated from Exchange useContract.ts
-import { Contract } from 'ethers'
-import { WNATIVE, ChainId } from '@pancakeswap/sdk'
-import { ERC20_BYTES32_ABI } from 'config/abi/erc20'
-import ERC20_ABI from 'config/abi/erc20.json'
+import { ChainId, WNATIVE } from '@pancakeswap/sdk'
 import IPancakePairABI from 'config/abi/IPancakePair.json'
 import multiCallAbi from 'config/abi/Multicall.json'
-import WETH_ABI from 'config/abi/weth.json'
+import { ERC20_BYTES32_ABI } from 'config/abi/erc20'
+import ERC20_ABI from 'config/abi/erc20.json'
 import WBETH_BSC_ABI from 'config/abi/wbethBSC.json'
 import WBETH_ETH_ABI from 'config/abi/wbethETH.json'
+import WETH_ABI from 'config/abi/weth.json'
+import { Contract } from 'ethers'
 import { getContract } from 'utils'
 
 import { WBETH } from 'config/constants/liquidStaking'
 import { VaultKey } from 'state/types'
-import { useActiveChainId } from './useActiveChainId'
 
 /**
  * Helper hooks to get specific contracts (by ABI)
@@ -335,8 +335,9 @@ export function useBCakeFarmBoosterContract(withSignerIfPossible = true) {
 }
 
 export function useBCakeFarmBoosterV3Contract(withSignerIfPossible = true) {
+  const { chainId } = useActiveChainId()
   const providerOrSigner = useProviderOrSigner(withSignerIfPossible, true)
-  return useMemo(() => getBCakeFarmBoosterV3Contract(providerOrSigner), [providerOrSigner])
+  return useMemo(() => getBCakeFarmBoosterV3Contract(chainId, providerOrSigner), [providerOrSigner, chainId])
 }
 
 export function useBCakeFarmBoosterProxyFactoryContract(withSignerIfPossible = true) {

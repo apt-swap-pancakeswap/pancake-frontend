@@ -98,8 +98,8 @@ export const getBCakeFarmBoosterAddress = () => {
   return getAddress(addresses.bCakeFarmBooster)
 }
 
-export const getBCakeFarmBoosterV3Address = () => {
-  return getAddress(addresses.bCakeFarmBoosterV3)
+export const getBCakeFarmBoosterV3Address = (chainId: ChainId) => {
+  return getAddress(addresses.bCakeFarmBoosterV3, chainId)
 }
 
 export const getBCakeFarmBoosterProxyFactoryAddress = () => {
