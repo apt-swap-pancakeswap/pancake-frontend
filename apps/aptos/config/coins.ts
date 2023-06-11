@@ -62,3 +62,123 @@ export const CE_BNB_MAINNET = new Coin(
   'ceBNB',
   'Celer - Binance Coin',
 )
+
+export const USD = {
+  [ChainId.TESTNET]: new Coin(
+    ChainId.TESTNET,
+    '0xb57ddb773fd1221ca225de3f04bcc5c6cd80a79cf7d74ed2c4b6ee812d2a2438::testcoins::USD',
+    8,
+    'USD',
+    'USDcoin',
+  ),
+}
+
+export const BTC = {
+  [ChainId.TESTNET]: new Coin(
+    ChainId.TESTNET,
+    '0xb57ddb773fd1221ca225de3f04bcc5c6cd80a79cf7d74ed2c4b6ee812d2a2438::testcoins::BTC',
+    8,
+    'BTC',
+    'BTCcoin',
+  ),
+}
+
+export const AAA = {
+  [ChainId.TESTNET]: new Coin(
+    ChainId.TESTNET,
+    '0xb57ddb773fd1221ca225de3f04bcc5c6cd80a79cf7d74ed2c4b6ee812d2a2438::testcoins::AAA',
+    8,
+    'AAA',
+    'AAAcoin',
+  ),
+}
+
+export const BBB = {
+  [ChainId.TESTNET]: new Coin(
+    ChainId.TESTNET,
+    '0xb57ddb773fd1221ca225de3f04bcc5c6cd80a79cf7d74ed2c4b6ee812d2a2438::testcoins::BBB',
+    8,
+    'BBB',
+    'BBBcoin',
+  ),
+}
+
+export const CCC = {
+  [ChainId.TESTNET]: new Coin(
+    ChainId.TESTNET,
+    '0xb57ddb773fd1221ca225de3f04bcc5c6cd80a79cf7d74ed2c4b6ee812d2a2438::testcoins::CCC',
+    8,
+    'CCC',
+    'CCCcoin',
+  ),
+}
+
+export const DDD = {
+  [ChainId.TESTNET]: new Coin(
+    ChainId.TESTNET,
+    '0xb57ddb773fd1221ca225de3f04bcc5c6cd80a79cf7d74ed2c4b6ee812d2a2438::testcoins::DDD',
+    8,
+    'DDD',
+    'DDDcoin',
+  ),
+}
+
+export const EEE = {
+  [ChainId.TESTNET]: new Coin(
+    ChainId.TESTNET,
+    '0xb57ddb773fd1221ca225de3f04bcc5c6cd80a79cf7d74ed2c4b6ee812d2a2438::testcoins::EEE',
+    8,
+    'EEE',
+    'EEEcoin',
+  ),
+}
+
+export const FFF = {
+  [ChainId.TESTNET]: new Coin(
+    ChainId.TESTNET,
+    '0xb57ddb773fd1221ca225de3f04bcc5c6cd80a79cf7d74ed2c4b6ee812d2a2438::testcoins::FFF',
+    8,
+    'FFF',
+    'FFFcoin',
+  ),
+}
+
+export const GGG = {
+  [ChainId.TESTNET]: new Coin(
+    ChainId.TESTNET,
+    '0xb57ddb773fd1221ca225de3f04bcc5c6cd80a79cf7d74ed2c4b6ee812d2a2438::testcoins::GGG',
+    8,
+    'GGG',
+    'GGGcoin',
+  ),
+}
+
+export const HHH = {
+  [ChainId.TESTNET]: new Coin(
+    ChainId.TESTNET,
+    '0xb57ddb773fd1221ca225de3f04bcc5c6cd80a79cf7d74ed2c4b6ee812d2a2438::testcoins::HHH',
+    8,
+    'HHH',
+    'HHHcoin',
+  ),
+}
+
+export const III = {
+  [ChainId.TESTNET]: new Coin(
+    ChainId.TESTNET,
+    '0xb57ddb773fd1221ca225de3f04bcc5c6cd80a79cf7d74ed2c4b6ee812d2a2438::testcoins::III',
+    8,
+    'III',
+    'IIIcoin',
+  ),
+}
+
+export const JJJ = {
+  [ChainId.TESTNET]: new Coin(
+    ChainId.TESTNET,
+    '0xb57ddb773fd1221ca225de3f04bcc5c6cd80a79cf7d74ed2c4b6ee812d2a2438::testcoins::JJJ',
+    8,
+    'JJJ',
+    'JJJcoin',
+  ),
+}
